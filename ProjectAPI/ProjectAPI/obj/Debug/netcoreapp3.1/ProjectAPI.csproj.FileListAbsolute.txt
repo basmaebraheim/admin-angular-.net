@@ -56,6 +56,16 @@ D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\stat
 D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\ProjectAPI.dll
 D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\ProjectAPI.pdb
 D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\ProjectAPI.genruntimeconfig.cache
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\libman.json
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\ProjectAPI.csproj.CoreCompileInputs.cache
 D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\obj\Debug\netcoreapp3.1\ProjectAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\New folder\UserCRUDProject\ProjectAPI\ProjectAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
