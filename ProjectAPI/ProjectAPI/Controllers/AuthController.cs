@@ -66,7 +66,7 @@ namespace ProjectAPI.Controllers
 
             } 
             var token = GenerateJSONWebToken(userInfo); 
-            return Ok(new { Token = token, Message = "Success" });
+            return Ok(new { Response = token, Message = "Success" });
         }
 
         private async Task<IdentityUser> ValidateUser(LoginVM userInfo)
@@ -80,18 +80,25 @@ namespace ProjectAPI.Controllers
             return null;
         }
 
-        private string GenerateJSONWebToken(LoginVM userInfo)
+        private LoginResponse GenerateJSONWebToken(LoginVM userInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            //var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-              _config["Jwt:Issuer"],
-              null,
-              expires: DateTime.Now.AddMinutes(120),
-              signingCredentials: credentials);
+            //var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+            //  _config["Jwt:Issuer"],
+            //  null,
+            //  expires: DateTime.Now.AddMinutes(120),
+            //  signingCredentials: credentials);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+
+            return null;
+            //    new LoginResponse()
+            //{
+            //    access_token = new JwtSecurityTokenHandler().WriteToken(token),
+            //    username = userInfo.Username,
+            //    expires_in = DateTime.Now.AddMinutes(120)
+            //};
         }
     }
 }
