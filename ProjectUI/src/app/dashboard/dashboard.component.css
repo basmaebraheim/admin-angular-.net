@@ -1,0 +1,25 @@
+ 
+
+  .example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  mat-drawer {
+    min-width: 14em;
+  }
+  mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-list-option
+  {
+    text-align: center;
+  }

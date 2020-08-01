@@ -1,2 +1,28 @@
-<p>dashboard works!</p>
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" hasBackdrop="false">
+    <mat-drawer #drawer mode="side" position="end">
+          <mat-selection-list #routes [multiple]="false" >
+            <mat-list-option *ngFor="let route of routesList" [value]="route" (click)="changeRoute(route)">
+              {{route.title}}
+              <mat-divider></mat-divider>
+            </mat-list-option>
+            <mat-list-option [value]="logout" (click)="logout()">
+                خروج
+                <mat-divider></mat-divider>
+              </mat-list-option>
+          </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content> 
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+              <span>Admin</span>
+              <span class="example-spacer"></span>
+              <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+              </button>
+            </mat-toolbar-row> 
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

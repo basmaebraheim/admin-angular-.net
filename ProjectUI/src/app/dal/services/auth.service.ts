@@ -30,8 +30,5 @@ export class AuthService {
     sessionStorage.setItem('currentUser', userLoginData.username);
     return userLoginData;
   }
-  logout() {
-    sessionStorage.removeItem('UserToken');
-    sessionStorage.removeItem('currentUser');
-  }
+   
 }
