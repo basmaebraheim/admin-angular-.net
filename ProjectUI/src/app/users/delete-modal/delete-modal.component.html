@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>هل تريد حذف بيانات هذا المستخدم؟ </h1>
+<div mat-dialog-content>
+  <p>{{data.fullName}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data.id" color="warn">حذف</button>
+  <button mat-raised-button (click)="onNoClick()" cdkFocusInitial color="primary"  >لا</button>
+</div>

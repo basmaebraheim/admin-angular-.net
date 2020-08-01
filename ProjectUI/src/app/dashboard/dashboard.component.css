@@ -1,6 +1,4 @@
- 
-
-  mat-drawer-container {
+ mat-drawer-container {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -9,7 +7,7 @@
 
   }
   mat-drawer {
-    min-width: 14em;
+    min-width: 18em;
   }
   mat-drawer-content {
     display: flex;
@@ -26,10 +24,7 @@
   .header-spacer {
     flex: 1 1 auto;
   } 
-  .mat-list-option
-  {
-    text-align: center;
-  }
+  
   select::-ms-expand {
     display: none;
     }

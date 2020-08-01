@@ -6,16 +6,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { AuthComponent } from './auth.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { AuthComponent } from './auth.component'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 
 import { AuthService } from '../dal/services/auth.service';
 import { HttpClientModule }    from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [AuthComponent, LoginComponent, RegisterComponent],
+  declarations: [AuthComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -23,7 +23,9 @@ import { HttpClientModule }    from '@angular/common/http';
     AuthRoutingModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatCardModule,
   ],
   providers:[AuthService]
 })

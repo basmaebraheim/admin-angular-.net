@@ -1,0 +1,21 @@
+
+mat-card{
+    max-width: 34em;
+    margin: auto;
+}
+.mat-form-field { 
+     width: 24em;
+    text-align: right;
+}
+.hide-password{
+    border: none;
+}
+.container  
+{ 
+    padding: 3em;
+}
+.container , .container .row
+{
+    align-items: center;
+    justify-content: center;
+}

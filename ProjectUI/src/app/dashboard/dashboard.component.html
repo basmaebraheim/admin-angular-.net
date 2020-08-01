@@ -1,20 +1,16 @@
 <mat-drawer-container  hasBackdrop="false">
     <mat-drawer #drawer mode="side" position="end">
-          <mat-selection-list #routes [multiple]="false" >
-            <mat-list-option *ngFor="let route of routesList" [value]="route" (click)="changeRoute(route)">
-              {{route.title}}
-              <mat-divider></mat-divider>
-            </mat-list-option>
-            <mat-list-option [value]="logout" (click)="logout()">
-                خروج
-                <mat-divider></mat-divider>
-              </mat-list-option>
-          </mat-selection-list>
+         <app-drawer-content></app-drawer-content>
     </mat-drawer>
     <mat-drawer-content> 
         <mat-toolbar color="primary">
             <mat-toolbar-row>
-
+              <button mat-icon-button (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+              </button>
+             
+              
+              <span class="header-spacer"></span>
               <select [style.background]="bodyBgColor" [(ngModel)]="bodyBgColor"  >
                 <option value="white" style="background-color: white;"></option>
                 <option value="red" style="background-color: red;"></option>
@@ -22,11 +18,6 @@
                 <option value="blue" style="background-color: blue;"></option>
                 <option value="yellow" style="background-color: yellow;"></option>
               </select>
-              
-              <span class="header-spacer"></span>
-              <button mat-icon-button (click)="drawer.toggle()">
-                <mat-icon>menu</mat-icon>
-              </button>
             </mat-toolbar-row> 
         </mat-toolbar>
         <div class="body-container" [style.background]="bodyBgColor">

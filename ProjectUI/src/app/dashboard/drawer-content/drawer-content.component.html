@@ -1,0 +1,10 @@
+<mat-selection-list #routes [multiple]="false" >
+    <mat-list-option *ngFor="let route of routesList" [value]="route" (click)="changeRoute(route)">
+      {{route.title}}
+      <mat-divider></mat-divider>
+    </mat-list-option>
+    <mat-list-option [value]="logout" (click)="logout()">
+        خروج
+        <mat-divider></mat-divider>
+      </mat-list-option>
+  </mat-selection-list>

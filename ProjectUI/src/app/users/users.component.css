@@ -1,0 +1,6 @@
+table {
+    direction: rtl; 
+  }
+  table caption, table th, table td {
+    direction: ltr; 
+  }

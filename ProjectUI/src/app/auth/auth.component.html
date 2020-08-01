@@ -1,5 +1,37 @@
+<div class="container">
+    <mat-card>
+        <form #loginForm="ngForm" (ngSubmit)="login()">
+            <div class="row">
+                <h1>Login</h1>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <mat-label>اسم المستخدم</mat-label>
+                    <input matInput id="Username" type="text" required [(ngModel)]="model.Username" name="Username">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="fill">
+                    <button mat-icon-button matPrefix (click)="hide = !hide" [attr.aria-pressed]="hide"
+                        class="hide-password">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-label>الرقم السرى</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" id="Password" required
+                        [(ngModel)]="model.Password" name="Password">
 
-  
-    <router-outlet></router-outlet>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <button mat-raised-button color="primary" [disabled]="loginForm.invalid">دخول</button>
 
- 
+            </div>
+            <div class="row">
+
+            </div>
+        </form>
+        <a mat-button color="primary" routerLink="/auth/register">تسجيل حساب جديد</a>
+
+    </mat-card>
+
+</div>
