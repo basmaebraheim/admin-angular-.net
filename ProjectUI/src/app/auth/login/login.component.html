@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="login()">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>اسم المستخدم</mat-label>
+                <input matInput id="Username" type="text"
+                required
+                [(ngModel)]="model.Username" name="Username">
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="fill">
+                <button mat-icon-button matPrefix (click)="hide = !hide" [attr.aria-pressed]="hide" class="hide-password">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-label>الرقم السرى</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"
+                id="Password"
+                required
+                [(ngModel)]="model.Password" name="Password">
+            
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <button mat-raised-button color="primary"  
+            [disabled]="loginForm.invalid"
+            >دخول</button>
+
+        </div>
+    </form>
+
+
+</div>
