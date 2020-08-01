@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" hasBackdrop="false">
+<mat-drawer-container  hasBackdrop="false">
     <mat-drawer #drawer mode="side" position="end">
           <mat-selection-list #routes [multiple]="false" >
             <mat-list-option *ngFor="let route of routesList" [value]="route" (click)="changeRoute(route)">
@@ -14,14 +14,22 @@
     <mat-drawer-content> 
         <mat-toolbar color="primary">
             <mat-toolbar-row>
-              <span>Admin</span>
-              <span class="example-spacer"></span>
-              <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
+
+              <select [style.background]="bodyBgColor" [(ngModel)]="bodyBgColor"  >
+                <option value="white" style="background-color: white;"></option>
+                <option value="red" style="background-color: red;"></option>
+                <option value="green" style="background-color: green;"></option>
+                <option value="blue" style="background-color: blue;"></option>
+                <option value="yellow" style="background-color: yellow;"></option>
+              </select>
+              
+              <span class="header-spacer"></span>
+              <button mat-icon-button (click)="drawer.toggle()">
                 <mat-icon>menu</mat-icon>
               </button>
             </mat-toolbar-row> 
         </mat-toolbar>
-        <div class="body-container">
+        <div class="body-container" [style.background]="bodyBgColor">
           <router-outlet></router-outlet>
         </div>
     </mat-drawer-content>

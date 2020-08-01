@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
 
    routesList: RouteInfo[] = ROUTES;
- 
+   bodyBgColor:string ='white';
    
 
    constructor( private router: Router) { }
@@ -20,10 +20,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  
   changeRoute(route:RouteInfo)
   {
-    this.router.navigate([route.path]);
-
+    this.router.navigate([route.path]); 
   }
   logout()
   {
