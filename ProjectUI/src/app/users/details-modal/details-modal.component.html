@@ -1,1 +1,46 @@
-<p>details-modal works!</p>
+<h1 mat-dialog-title> </h1>
+<div mat-dialog-content class="mat-dialog-content">
+  <form>
+    <div class="form-group">
+      <label for="fullname">الإسم</label>
+      <input type="text" class="form-control" name="fullname" id="fullname" [(ngModel)]="data.fullName" required>
+    </div>
+    <div class="form-group">
+      <label for="birthdate">تاريخ الميلاد</label>
+  
+      <div class="input-group-append">
+        <input  type="text" class="form-control" placeholder="yyyy-mm-dd" required name="birthdate"   [(ngModel)]="birthdate"  ngbDatepicker
+          #d="ngbDatepicker" (ngModelChange)="changeDate($event)">
+        <button mat-flat-button color="primary" (click)="d.toggle()">
+          <mat-icon>calendar_today</mat-icon>
+        </button>
+      </div>
+  
+    </div>
+    <div class="form-group">
+      <label for="gender">النوع</label>
+      <div class="form-group">
+         <select class="form-control" id="gender" name="gender" [(ngModel)]="data.gender" required>
+          <option value="none">--</option>
+          <option  value="female">أنثى</option>
+          <option  value="male">ذكر</option>
+         </select>
+      </div>
+    </div>
+    <div class="form-group" required>
+      <label for="age">السن</label>
+      <input type="number"  class="form-control" id="age"  name="age" [(ngModel)]="data.age">
+    </div>
+   
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" *ngIf="data && data.id!=0">تعديل</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" *ngIf="data.id == 0">إضافة</button>
+
+  <button mat-raised-button (click)="onNoClick()" color="warn" >إلغاء</button>
+</div>
+
+
+

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 
 import { DeleteModal } from './delete-modal/delete-modal.component';
 import { DetailsModal } from './details-modal/details-modal.component';
+import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DetailsModal } from './details-modal/details-modal.component';
     MatButtonModule,
     MatDialogModule,
     MatCardModule,
+    NgbDatepickerModule,
+    FormsModule
   ],
-  providers:[UsersService]
+  providers:[UsersService, DatePipe ]
 })
 export class UsersModule { }

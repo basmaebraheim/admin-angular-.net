@@ -34,6 +34,7 @@ import { DrawerContentComponent } from './dashboard/drawer-content/drawer-conten
     MatButtonModule,
     MatSelectModule,
     FormsModule,
+      
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

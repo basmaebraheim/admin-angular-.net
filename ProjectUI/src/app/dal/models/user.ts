@@ -1,8 +1,10 @@
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+
 export interface UserModel {
-    id: string;
+    id: Number;
     fullName: string;
     age: Number;
-    birthdate: Date;
+    birthdate: Date ;
     gender: string;
 }
 

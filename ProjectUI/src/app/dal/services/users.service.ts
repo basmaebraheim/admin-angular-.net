@@ -29,6 +29,16 @@ export class UsersService {
 
     return db;
   }
+  add(user) {
+    var db = this.http.post<Observable<string>>(API_URL + 'Customers', user, this.httpOptions);
+
+    return db;
+  }
+  update(user) {
+    var db = this.http.put<Observable<string>>(API_URL + 'Customers/'+user.id, user, this.httpOptions);
+
+    return db;
+  }
    
    
 }
