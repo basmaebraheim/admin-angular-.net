@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import localeAr from '@angular/common/locales/ar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { DrawerContentComponent } from './dashboard/drawer-content/drawer-content.component';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeAr);
 
 @NgModule({
   declarations: [
@@ -36,7 +39,7 @@ import { DrawerContentComponent } from './dashboard/drawer-content/drawer-conten
     FormsModule,
       
   ],
-  providers: [AuthGuard],
+  providers: [{ provide: LOCALE_ID, useValue: 'ar' },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

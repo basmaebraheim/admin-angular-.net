@@ -21,11 +21,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let user of users; index as i">
-                        <td>{{i+1}}</td>
+                        <td>{{i+1 | number}}</td>
                         <td>{{user.fullName}}</td>
                         <td>{{user.gender}}</td>
-                        <td>{{user.birthdate | date}}</td>
-                        <td>{{user.age}}</td>
+                        <td style="    direction: rtl">{{user.birthdate | date:'longDate'}}</td>
+                        <td>{{user.age | number}}</td>
                         <td>
                             <button mat-icon-button color="warn" aria-label="Delete" (click)="openDeleteDialog(user)">
                                 <mat-icon>delete</mat-icon>
