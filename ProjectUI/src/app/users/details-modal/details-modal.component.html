@@ -1,45 +1,42 @@
-<h1 mat-dialog-title> </h1>
-<div mat-dialog-content class="mat-dialog-content">
-  <form #userForm="ngForm">
-    <div class="form-group">
-      <label for="fullname">الإسم</label>
-      <input type="text" class="form-control" name="fullname" id="fullname" [(ngModel)]="data.fullName" required>
-    </div>
-    <div class="form-group">
-      <label for="birthdate">تاريخ الميلاد</label>
-  
-      <div class="input-group-append">
-        <input  type="text" class="form-control" placeholder="yyyy-mm-dd" required name="birthdate"   [(ngModel)]="birthdate"  ngbDatepicker
-          #d="ngbDatepicker" (ngModelChange)="changeDate($event)">
-        <button mat-flat-button color="primary" (click)="d.toggle()">
-          <mat-icon>calendar_today</mat-icon>
-        </button>
-      </div>
-  
-    </div>
-    <div class="form-group">
-      <label for="gender">النوع</label>
-      <div class="form-group">
-         <select class="form-control" id="gender" name="gender" [(ngModel)]="data.gender" required>
-          <option  value="female">أنثى</option>
-          <option  value="male">ذكر</option>
-         </select>
-      </div>
-    </div>
-    <div class="form-group" required>
-      <label for="age">السن</label>
-      <input type="number"  class="form-control" id="age"  name="age" [(ngModel)]="data.age">
-    </div>
-   
-  </form>
+<form #userForm="ngForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>الإسم</mat-label>
+      <input type="text" minlength="4" matInput name="fullname" id="fullname" [(ngModel)]="model.fullName" required>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>تاريخ الميلاد</mat-label>
+      <input matInput class="form-control" placeholder="yyyy-mm-dd" required name="birthdate" [(ngModel)]="birthdate"
+        ngbDatepicker #d="ngbDatepicker" (ngModelChange)="changeDate($event)" [minDate]="{year: 1900, month: 1}"
+        [maxDate]="{year: 2010, month: 1}" [startDate]="{year: 2000, month: 1}" [markDisabled]="isDisabledDate">
+      <button mat-icon-button matSuffix (click)="d.toggle()">
+        <mat-icon>calendar_today</mat-icon>
+      </button>
+    </mat-form-field>
 
-</div>
-<div mat-dialog-actions>
-  <button mat-raised-button [mat-dialog-close]="data" color="primary" [disabled]="userForm.invalid" *ngIf="data && data.id!=0">تعديل</button>
-  <button mat-raised-button [mat-dialog-close]="data" color="primary" [disabled]="userForm.invalid" *ngIf="data.id == 0">إضافة</button>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>النوع</mat-label>
+      <mat-select matInput id="gender" name="gender" [(ngModel)]="model.gender" required>
+        <mat-option value="female">أنثى</mat-option>
+        <mat-option value="male">ذكر</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>السن</mat-label>
+      <input matInput type="number" disabled required id="age" name="age" [(ngModel)]="model.age" min="10">
+    </mat-form-field>
+  </div>
 
-  <button mat-raised-button (click)="onNoClick()" color="warn" >إلغاء</button>
-</div>
+</form>
+<button mat-raised-button [mat-dialog-close]="model" color="primary" [disabled]="userForm.invalid"
+  *ngIf="model && model.id!=0">تعديل</button>
+<button mat-raised-button [mat-dialog-close]="model" color="primary" [disabled]="userForm.invalid"
+  *ngIf="model.id == 0">إضافة</button>
 
-
-
+<button mat-raised-button (click)="onNoClick()" color="warn">إلغاء</button>

@@ -1,14 +1,14 @@
 button{
     margin: .5em;
 }
-.mat-dialog-content{
+.mat-dialog-content , .form-group{
     width: 100%;
     align-items:center;
     justify-content: center;
-}
-
-.mat-flat-button{
-    min-width: 30px;
-    margin: 0em;
+    text-align: center;
 }
  
+.mat-form-field { 
+    width: 27em;
+   text-align: right;
+}

@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AuthService } from '../dal/services/auth.service';
 import { HttpClientModule }    from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule }    from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatProgressSpinnerModule,
   ],
   providers:[AuthService]
 })

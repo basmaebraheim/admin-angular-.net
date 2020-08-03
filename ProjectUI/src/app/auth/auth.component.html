@@ -2,7 +2,7 @@
     <mat-card>
         <form #loginForm="ngForm" (ngSubmit)="login()">
             <div class="row">
-                <h1>Login</h1>
+                <h1>Login                     <mat-spinner diameter="20" style="display: inline-block;" *ngIf="loading"></mat-spinner>                 </h1>
             </div>
             <div class="row">
                 <mat-form-field appearance="fill">
@@ -23,7 +23,9 @@
                 </mat-form-field>
             </div>
             <div class="row">
-                <button mat-raised-button color="primary" [disabled]="loginForm.invalid">دخول</button>
+                <button mat-raised-button color="primary" [disabled]="loginForm.invalid || loading">دخول
+
+                </button>
 
             </div>
             <div class="row">

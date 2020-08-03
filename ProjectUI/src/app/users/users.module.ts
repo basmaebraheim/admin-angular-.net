@@ -9,11 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule} from '@angular/material/select';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { DeleteModal } from './delete-modal/delete-modal.component';
 import { DetailsModal } from './details-modal/details-modal.component';
 import {NgbDatepickerModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -26,8 +29,11 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatDialogModule,
     MatCardModule,
+    MatSelectModule,
     NgbDatepickerModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
   ],
   providers:[UsersService, DatePipe ]
 })

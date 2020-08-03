@@ -12,6 +12,7 @@ export class AuthComponent implements OnInit {
 
   hide:boolean = true;
   model: LoginModel;
+  loading =false;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -20,12 +21,16 @@ export class AuthComponent implements OnInit {
   }
   login()
   {
+    this.loading = true;
     this.authService.login(this.model).subscribe(
       data => {
         this.router.navigate(['/users']);
+        this.loading = false;
 
       },
-      err=>{console.log(err)}
+      err=>{console.log(err);
+        this.loading = false;
+      }
     )
   }
 

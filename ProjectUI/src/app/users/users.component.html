@@ -5,7 +5,12 @@
                 <button mat-raised-button color="primary" (click)="openDetailsDialog(null)">
                     <mat-icon>add</mat-icon>
                     إضافة
-                </button></mat-card-title>
+                </button>
+                <mat-spinner diameter="20" style="display: inline-block;" *ngIf="loadingUsersList"></mat-spinner> 
+
+            
+            </mat-card-title>
+
         </mat-card-header>
         <mat-card-content>
             <table class="table table-striped">
