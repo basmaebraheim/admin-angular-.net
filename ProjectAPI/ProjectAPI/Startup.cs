@@ -42,10 +42,7 @@ namespace ProjectAPI
                             .AddEntityFrameworkStores<DAL.ApplicationDbContext>();
 
 
-            Mapper.Initialize(cfg =>
-            {
-                cfg.AddProfile<AutoMapperCustomer>();
-            });
+           
             // Repositories
             services.AddScoped<IUnitOfWork, HttpUnitOfWork>();
  
@@ -69,6 +66,9 @@ namespace ProjectAPI
                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                   };
               });
+
+            // DB Creation and Seeding
+            services.AddTransient<IDatabaseInitializer, DatabaseInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
