@@ -1,6 +1,6 @@
 <h1 mat-dialog-title> </h1>
 <div mat-dialog-content class="mat-dialog-content">
-  <form>
+  <form #userForm="ngForm">
     <div class="form-group">
       <label for="fullname">الإسم</label>
       <input type="text" class="form-control" name="fullname" id="fullname" [(ngModel)]="data.fullName" required>
@@ -21,7 +21,6 @@
       <label for="gender">النوع</label>
       <div class="form-group">
          <select class="form-control" id="gender" name="gender" [(ngModel)]="data.gender" required>
-          <option value="none">--</option>
           <option  value="female">أنثى</option>
           <option  value="male">ذكر</option>
          </select>
@@ -36,8 +35,8 @@
 
 </div>
 <div mat-dialog-actions>
-  <button mat-raised-button [mat-dialog-close]="data" color="primary" *ngIf="data && data.id!=0">تعديل</button>
-  <button mat-raised-button [mat-dialog-close]="data" color="primary" *ngIf="data.id == 0">إضافة</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" [disabled]="userForm.invalid" *ngIf="data && data.id!=0">تعديل</button>
+  <button mat-raised-button [mat-dialog-close]="data" color="primary" [disabled]="userForm.invalid" *ngIf="data.id == 0">إضافة</button>
 
   <button mat-raised-button (click)="onNoClick()" color="warn" >إلغاء</button>
 </div>

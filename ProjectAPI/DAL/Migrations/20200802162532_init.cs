@@ -55,7 +55,7 @@ namespace DAL.Migrations
                     FullName = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: true),
                     Birthdate = table.Column<DateTime>(nullable: true),
-                    Gender = table.Column<int>(nullable: true)
+                    Gender = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

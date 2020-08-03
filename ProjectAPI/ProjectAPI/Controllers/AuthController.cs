@@ -81,24 +81,25 @@ namespace ProjectAPI.Controllers
         }
 
         private LoginResponse GenerateJSONWebToken(LoginVM userInfo)
-        {
-            //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            //var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        { 
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            //var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-            //  _config["Jwt:Issuer"],
-            //  null,
-            //  expires: DateTime.Now.AddMinutes(120),
-            //  signingCredentials: credentials);
+            var token = new JwtSecurityToken(
+                issuer: _config["Jwt:Issuer"],
+                audience: _config["Jwt:Audience"],
+                expires: DateTime.Now.AddHours(3),
+                signingCredentials: credentials
+                );
 
+ 
 
-            return null;
-            //    new LoginResponse()
-            //{
-            //    access_token = new JwtSecurityTokenHandler().WriteToken(token),
-            //    username = userInfo.Username,
-            //    expires_in = DateTime.Now.AddMinutes(120)
-            //};
+            return new LoginResponse()
+            {
+                access_token = new JwtSecurityTokenHandler().WriteToken(token),
+                username = userInfo.Username,
+                expires_in = DateTime.Now.AddMinutes(120)
+            };
         }
     }
 }

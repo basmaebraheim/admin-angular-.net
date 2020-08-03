@@ -48,23 +48,27 @@ namespace ProjectAPI
             });
             // Repositories
             services.AddScoped<IUnitOfWork, HttpUnitOfWork>();
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+ 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
               .AddJwtBearer(options =>
               {
-                  options.TokenValidationParameters = new TokenValidationParameters
+                  options.SaveToken = true;
+                  options.RequireHttpsMetadata = false;
+                  options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                   {
                       ValidateIssuer = true,
                       ValidateAudience = true,
                       ValidateLifetime = true,
-                      ValidateIssuerSigningKey = true,
+                      ValidAudience = Configuration["Jwt:Audience"],
                       ValidIssuer = Configuration["Jwt:Issuer"],
-                      ValidAudience = Configuration["Jwt:Issuer"],
                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                   };
               });
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,10 +83,9 @@ namespace ProjectAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseAuthentication(); 
 
             app.UseEndpoints(endpoints =>
             {

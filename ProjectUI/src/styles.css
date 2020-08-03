@@ -13,3 +13,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     direction: ltr;
 
 }
+
+.ngb-dp-content.ngb-dp-months  *
+{
+    direction: rtl;
+}

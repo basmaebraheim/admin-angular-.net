@@ -21,7 +21,7 @@ namespace ProjectAPI.ViewModels
             public DateTime Birthdate { get; set; }
 
             [Required( ErrorMessage = "Gender is required")]
-            public Gender Gender { get; set; }
+            public string Gender { get; set; }
         }
         public class CustomerPatchVM
         {
@@ -29,7 +29,7 @@ namespace ProjectAPI.ViewModels
             public string FullName { get; set; }
             public int Age { get; set; }
             public DateTime Birthdate { get; set; }
-            public Gender Gender { get; set; }
+            public string Gender { get; set; }
         }
 
 

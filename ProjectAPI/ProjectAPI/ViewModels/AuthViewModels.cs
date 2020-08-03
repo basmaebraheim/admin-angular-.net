@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectAPI.ViewModels
 {
@@ -30,7 +31,7 @@ namespace ProjectAPI.ViewModels
     public class LoginResponse
     {
         public string access_token { get; set; }
-        public string expires_in { get; set; }
+        public DateTime expires_in { get; set; }
         public string username { get; set; }
 
 

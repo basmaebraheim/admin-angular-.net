@@ -14,8 +14,9 @@ export class UsersService {
   constructor(private http: HttpClient) {
   }
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' ,
+     'Authorization': 'Bearer '+sessionStorage.getItem('UserToken')}),
+   };
 
 
   getAll() {

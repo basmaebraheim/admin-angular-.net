@@ -12,6 +12,8 @@ namespace ProjectAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class CustomersController : ControllerBase
     {
 
@@ -24,7 +26,6 @@ namespace ProjectAPI.Controllers
         }
         // GET: api/Customers
         [HttpGet]
-        [Authorize]
 
         public IActionResult Get()
         {
@@ -34,6 +35,7 @@ namespace ProjectAPI.Controllers
 
 
         // GET api/Customers/5
+
         [HttpGet("{id}")]
 
         public ActionResult<Customer> Get(int id)
@@ -61,8 +63,8 @@ namespace ProjectAPI.Controllers
                 return NotFound();
 
             }
-            
-            return Ok("Success");
+
+            return NoContent();
 
         }
 
@@ -107,7 +109,7 @@ namespace ProjectAPI.Controllers
                 return NotFound();
 
             }
-            return Ok("Success");
+            return NoContent();
 
         }
     }
